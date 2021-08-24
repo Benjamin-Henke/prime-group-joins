@@ -11,9 +11,29 @@ JOIN "products"
 	ON "line_items"."product_id" = "products"."id";
 
 -- 3. Which warehouses have cheetos?
-
+SELECT
+	"warehouse"."warehouse" AS "warehouseName",
+	count("products"."description") AS "productCount"
+FROM "warehouse"
+JOIN "warehouse_product"
+	ON "warehouse"."id" = "warehouse_product"."warehouse_id"
+JOIN "products"
+	ON "warehouse_product"."product_id" = "products"."id"
+GROUP BY "warehouseName";
+    -- Stuck on what to write to show warehouse name and product description
 
 -- 4. Which warehouses have diet pepsi?
+	"products"."description" AS "productName",
+	"warehouse"."warehouse" AS "warehouseName",
+	count("warehouse"."id") AS "warehouseId"
+FROM "warehouse"
+JOIN "warehouse_product"
+	ON "warehouse"."id" = "warehouse_product"."warehouse_id"
+JOIN "products"
+	ON "warehouse_product"."product_id" = "products"."id"
+GROUP BY "warehouseName";
+    -- Stuck on what to write to show warehouse name and product description
+
 -- 5. Get the number of orders for each customer. NOTE: It is OK if those without orders are not included in results.
 -- 6. How many customers do we have?
 -- 7. How many products do we carry?
