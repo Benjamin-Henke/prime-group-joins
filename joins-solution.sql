@@ -11,6 +11,8 @@ JOIN "products"
 	ON "line_items"."product_id" = "products"."id";
 
 -- 3. Which warehouses have cheetos?
+
+
 -- 4. Which warehouses have diet pepsi?
 -- 5. Get the number of orders for each customer. NOTE: It is OK if those without orders are not included in results.
 -- 6. How many customers do we have?
