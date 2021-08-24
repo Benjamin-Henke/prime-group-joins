@@ -56,7 +56,11 @@ SELECT
 FROM "products";
 
 -- 8. What is the total available on-hand quantity of diet pepsi?
-
+SELECT * FROM "products"
+	"warehouse_product"."on_hand"
+JOIN "warehouse_product" 
+	ON "products"."id" = "warehouse_product"."product_id"
+WHERE "products"."id" = '6';
 
 --Stretch
 -- How much was the total cost for each order?
