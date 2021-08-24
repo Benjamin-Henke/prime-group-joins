@@ -31,11 +31,19 @@ JOIN "products"
 WHERE "products"."id" = '6';
 
 -- 5. Get the number of orders for each customer. NOTE: It is OK if those without orders are not included in results.
-SELECT * FROM "customers"
-JOIN "addresses"
+SELECT 
+	"customers"."first_name",
+	"customers"."last_name",
+	sum("line_items"."quantity")
+FROM "customers"
+JOIN "addresses" 
 	ON "customers"."id" = "addresses"."customer_id"
-JOIN "orders"
-	ON "addresses"."id" = "orders"."address_id";
+JOIN "orders" 
+	ON "addresses"."id" = "orders"."address_id"
+JOIN "line_items" 
+	ON "orders"."id" = "line_items"."order_id"
+GROUP BY "line_items"."quantity";
+
 
 -- 6. How many customers do we have?
 
