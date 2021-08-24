@@ -43,6 +43,7 @@ JOIN "orders"
 JOIN "line_items" 
 	ON "orders"."id" = "line_items"."order_id"
 GROUP BY "line_items"."quantity";
+-- stuck
 
 
 -- 6. How many customers do we have?
@@ -61,6 +62,7 @@ SELECT * FROM "products"
 JOIN "warehouse_product" 
 	ON "products"."id" = "warehouse_product"."product_id"
 WHERE "products"."id" = '6';
+-- not sure what the syntax error is
 
 --Stretch
 -- How much was the total cost for each order?
