@@ -46,8 +46,14 @@ GROUP BY "line_items"."quantity";
 
 
 -- 6. How many customers do we have?
+SELECT
+	count("customers"."id")
+FROM "customers";
 
 -- 7. How many products do we carry?
+SELECT
+	count("products"."id")
+FROM "products";
 
 -- 8. What is the total available on-hand quantity of diet pepsi?
 
