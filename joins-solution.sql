@@ -18,7 +18,6 @@ JOIN "warehouse_product"
 	ON "warehouse"."id" = "warehouse_product"."warehouse_id"
 JOIN "products"
 	ON "warehouse_product"."product_id" = "products"."id"
-GROUP BY "warehouseName" 
 WHERE "products"."id" = '5';
 
 -- 4. Which warehouses have diet pepsi?
@@ -29,7 +28,6 @@ JOIN "warehouse_product"
 	ON "warehouse"."id" = "warehouse_product"."warehouse_id"
 JOIN "products"
 	ON "warehouse_product"."product_id" = "products"."id"
-GROUP BY "warehouseName"
 WHERE "products"."id" = '6';
 
 -- 5. Get the number of orders for each customer. NOTE: It is OK if those without orders are not included in results.
